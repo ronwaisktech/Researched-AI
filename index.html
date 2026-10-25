@@ -20,7 +20,7 @@
         <header class="bg-white/95 backdrop-blur-md border border-slate-200 shadow-lg shadow-slate-200/50 rounded-full px-6 py-3 flex items-center justify-between">
             
             <!-- Brand Logo -->
-            <a href="#" class="flex items-center gap-2.5">
+            <a href="index.html" class="flex items-center gap-2.5">
                 <div class="bg-[#0b132b] text-white w-9 h-9 rounded-full flex items-center justify-center font-bold shadow-md">
                     <i class="fa-solid fa-atom text-base"></i>
                 </div>
@@ -29,30 +29,20 @@
 
             <!-- Navigation Links -->
             <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-700">
-                <a href="#" class="hover:text-blue-600 transition">Home</a>
-                <div class="relative group cursor-pointer flex items-center gap-1 hover:text-blue-600 transition" onclick="toggleDropdown(event)">
-                    <span>Features</span>
-                    <i class="fa-solid fa-chevron-down text-[10px]"></i>
-                    <div id="features-dropdown" class="hidden absolute top-full left-0 mt-2 w-48 bg-white border border-slate-200 rounded-xl shadow-xl py-2 z-50 text-xs font-medium text-slate-700">
-                        <a href="#active-workspace" onclick="switchWorkspace('Deep Reasoning')" class="block px-4 py-2 hover:bg-slate-50 hover:text-blue-600">Deep Reasoning</a>
-                        <a href="#active-workspace" onclick="switchWorkspace('PDF Chat')" class="block px-4 py-2 hover:bg-slate-50 hover:text-blue-600">PDF Chat</a>
-                        <a href="#active-workspace" onclick="switchWorkspace('AI Editor')" class="block px-4 py-2 hover:bg-slate-50 hover:text-blue-600">AI Editor</a>
-                        <a href="#active-workspace" onclick="switchWorkspace('Library')" class="block px-4 py-2 hover:bg-slate-50 hover:text-blue-600">Library</a>
-                    </div>
-                </div>
-                <a href="#workflows" class="hover:text-blue-600 transition">Workflows</a>
-                <a href="#pricing" class="hover:text-blue-600 transition">Pricing</a>
-                <a href="#faqs" class="hover:text-blue-600 transition">FAQs</a>
-                <a href="#corpus" class="hover:text-blue-600 transition">Blogs</a>
+                <a href="index.html" class="hover:text-blue-600 transition">Home</a>
+                <a href="index.html#workflows" class="hover:text-blue-600 transition">Workflows</a>
+                <a href="index.html#pricing" class="hover:text-blue-600 transition">Pricing</a>
+                <a href="index.html#faqs" class="hover:text-blue-600 transition">FAQs</a>
+                <a href="index.html#corpus" class="hover:text-blue-600 transition">Blogs</a>
             </nav>
 
             <!-- Action Buttons -->
             <div class="flex items-center gap-3">
-                <a href="#active-workspace" onclick="switchWorkspace('Authentication Portal')" class="hidden sm:flex items-center gap-1.5 text-xs font-bold text-slate-700 hover:text-blue-600 transition">
+                <a href="auth.html" class="hidden sm:flex items-center gap-1.5 text-xs font-bold text-slate-700 hover:text-blue-600 transition">
                     <i class="fa-solid fa-globe text-blue-600"></i>
                     <span>Signin/Register</span>
                 </a>
-                <a href="#playground" class="bg-[#0b132b] hover:bg-slate-800 text-white px-5 py-2 rounded-full text-xs font-bold tracking-wide transition shadow-md flex flex-col items-center leading-tight">
+                <a href="playground.html" class="bg-[#0b132b] hover:bg-slate-800 text-white px-5 py-2 rounded-full text-xs font-bold tracking-wide transition shadow-md flex flex-col items-center leading-tight">
                     <span>Explore Researched.ai</span>
                     <span class="text-[9px] font-normal text-slate-300">No login required</span>
                 </a>
@@ -80,104 +70,13 @@
         </p>
 
         <div class="pt-2">
-            <a href="#playground" class="inline-block bg-[#0b132b] hover:bg-slate-800 text-white font-bold text-sm px-8 py-3.5 rounded-xl shadow-lg transition">
+            <a href="playground.html" class="inline-block bg-[#0b132b] hover:bg-slate-800 text-white font-bold text-sm px-8 py-3.5 rounded-xl shadow-lg transition">
                 Start Using Researched.ai
             </a>
         </div>
     </section>
 
-    <!-- Public Research Playground Section -->
-    <section id="playground" class="max-w-6xl mx-auto px-4 py-8 w-full">
-        <div class="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-xl space-y-6">
-            
-            <div class="space-y-1">
-                <span class="text-xs font-bold tracking-wider text-teal-600 uppercase flex items-center gap-1">
-                    <i class="fa-solid fa-code-branch"></i> Public Research Playground
-                </span>
-                <h2 class="text-2xl sm:text-3xl font-black text-[#0b132b]">
-                    Search the scholarly graph before you sign in.
-                </h2>
-                <p class="text-xs sm:text-sm text-slate-500">
-                    Try a research question, Boolean search string, or entity lookup across works, authors, journals, institutions, funders, and topics.
-                </p>
-            </div>
-
-            <!-- Playground Main Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                
-                <!-- Left Control Panel -->
-                <div class="lg:col-span-5 space-y-5 bg-slate-50 p-5 rounded-2xl border border-slate-200">
-                    <div class="space-y-1.5">
-                        <label class="text-xs font-bold text-slate-700">Research question</label>
-                        <div class="flex gap-2">
-                            <input type="text" id="main-query" value="semaglutide adolescent obesity randomized trial" 
-                                class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs text-slate-800 font-medium focus:outline-none focus:ring-2 focus:ring-blue-600">
-                            <button onclick="executePlaygroundSearch()" class="bg-[#0b132b] hover:bg-slate-800 text-white px-4 py-2 rounded-lg text-xs font-bold transition flex items-center gap-1.5 shrink-0 shadow-sm">
-                                <i class="fa-solid fa-magnifying-glass"></i> Search
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="space-y-2">
-                        <label class="text-xs font-bold text-slate-700">Sources</label>
-                        <div class="flex flex-wrap gap-1.5">
-                            <label class="cursor-pointer">
-                                <input type="checkbox" id="src-semanticscholar" checked class="hidden peer">
-                                <span class="inline-block text-[11px] font-bold px-2.5 py-1 rounded-lg border border-teal-600 text-teal-700 bg-teal-50 peer-checked:bg-teal-600 peer-checked:text-white transition">Semantic Scholar</span>
-                            </label>
-                            <label class="cursor-pointer">
-                                <input type="checkbox" id="src-pubmed" checked class="hidden peer">
-                                <span class="inline-block text-[11px] font-bold px-2.5 py-1 rounded-lg border border-teal-600 text-teal-700 bg-teal-50 peer-checked:bg-teal-600 peer-checked:text-white transition">PubMed</span>
-                            </label>
-                            <label class="cursor-pointer">
-                                <input type="checkbox" id="src-crossref" checked class="hidden peer">
-                                <span class="inline-block text-[11px] font-bold px-2.5 py-1 rounded-lg border border-teal-600 text-teal-700 bg-teal-50 peer-checked:bg-teal-600 peer-checked:text-white transition">Crossref</span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Display Window -->
-                <div class="lg:col-span-7 space-y-4">
-                    <div id="results-window" class="border-2 border-dashed border-slate-300 rounded-2xl p-8 text-center bg-slate-50 space-y-3 min-h-[350px] flex flex-col items-center justify-center">
-                        <div class="w-12 h-12 rounded-full bg-teal-100 text-teal-700 flex items-center justify-center text-xl">
-                            <i class="fa-solid fa-book-open"></i>
-                        </div>
-                        <h3 class="text-base font-bold text-slate-800">A useful preview, not a dead search box.</h3>
-                        <p class="text-xs text-slate-500 max-w-sm">
-                            Search results return papers, source coverage, and grounded AI summaries. Click Search to execute.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Master Interactive Workspace Section (Loads dynamically when any workflow button is clicked) -->
-    <section id="active-workspace" class="max-w-6xl mx-auto px-4 py-6 w-full">
-        <div id="workspace-container" class="bg-[#0b132b] text-white border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6">
-            <div class="flex items-center justify-between border-b border-slate-800 pb-4">
-                <div class="flex items-center gap-3">
-                    <div class="bg-blue-600 text-white w-10 h-10 rounded-xl flex items-center justify-center font-bold">
-                        <i id="workspace-icon" class="fa-solid fa-laptop-code text-lg"></i>
-                    </div>
-                    <div>
-                        <span class="text-[10px] font-bold uppercase tracking-wider text-blue-400">Interactive Tool Suite</span>
-                        <h3 id="workspace-title" class="text-xl font-black text-white">Select a workflow card below to launch tool</h3>
-                    </div>
-                </div>
-                <button onclick="resetWorkspace()" class="text-xs text-slate-400 hover:text-white bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">Close Workspace</button>
-            </div>
-            
-            <div id="workspace-content" class="space-y-4 text-sm text-slate-300">
-                <p>Click any **Learn more** or action button on the 12 workflow cards below to immediately load the corresponding interactive workspace right here.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Workflows Grid Section (12 Feature Cards with Live Workspace Triggers) -->
+    <!-- Workflows Grid Section (12 Feature Cards linking to dedicated pages) -->
     <section id="workflows" class="max-w-6xl mx-auto px-4 py-12 w-full space-y-8">
         
         <div class="space-y-2">
@@ -199,8 +98,8 @@
                     <p class="text-xs text-slate-600 leading-relaxed">Multiagent research with 200+ AI agents for source-aware academic work.</p>
                 </div>
                 <div class="flex items-center gap-2 pt-2 border-t border-slate-100">
-                    <button onclick="switchWorkspace('Deep Reasoning Info')" class="bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs font-bold px-3 py-2 rounded-lg flex-1 transition">Learn more</button>
-                    <button onclick="switchWorkspace('Deep Reasoning')" class="bg-[#0b132b] hover:bg-slate-800 text-white text-xs font-bold px-3 py-2 rounded-lg flex-1 transition">Start research</button>
+                    <a href="tool.html?tool=deep-reasoning&type=info" class="bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs font-bold px-3 py-2 rounded-lg flex-1 text-center transition">Learn more</a>
+                    <a href="tool.html?tool=deep-reasoning&type=app" class="bg-[#0b132b] hover:bg-slate-800 text-white text-xs font-bold px-3 py-2 rounded-lg flex-1 text-center transition">Start research</a>
                 </div>
             </div>
 
@@ -213,8 +112,8 @@
                     <p class="text-xs text-slate-600 leading-relaxed">Search 300M+ articles, journals, authors, and grounded search strings.</p>
                 </div>
                 <div class="flex items-center gap-2 pt-2 border-t border-slate-100">
-                    <button onclick="switchWorkspace('Find Articles Info')" class="bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs font-bold px-3 py-2 rounded-lg flex-1 transition">Learn more</button>
-                    <button onclick="window.location.href='#playground'" class="bg-[#0b132b] hover:bg-slate-800 text-white text-xs font-bold px-3 py-2 rounded-lg flex-1 transition">Find articles</button>
+                    <a href="tool.html?tool=find-articles&type=info" class="bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs font-bold px-3 py-2 rounded-lg flex-1 text-center transition">Learn more</a>
+                    <a href="playground.html" class="bg-[#0b132b] hover:bg-slate-800 text-white text-xs font-bold px-3 py-2 rounded-lg flex-1 text-center transition">Find articles</a>
                 </div>
             </div>
 
@@ -227,8 +126,8 @@
                     <p class="text-xs text-slate-600 leading-relaxed">Ask questions from PDFs and turn papers into usable evidence.</p>
                 </div>
                 <div class="flex items-center gap-2 pt-2 border-t border-slate-100">
-                    <button onclick="switchWorkspace('PDF Chat Info')" class="bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs font-bold px-3 py-2 rounded-lg flex-1 transition">Learn more</button>
-                    <button onclick="switchWorkspace('PDF Chat')" class="bg-[#0b132b] hover:bg-slate-800 text-white text-xs font-bold px-3 py-2 rounded-lg flex-1 transition">Chat PDFs</button>
+                    <a href="tool.html?tool=pdf-chat&type=info" class="bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs font-bold px-3 py-2 rounded-lg flex-1 text-center transition">Learn more</a>
+                    <a href="tool.html?tool=pdf-chat&type=app" class="bg-[#0b132b] hover:bg-slate-800 text-white text-xs font-bold px-3 py-2 rounded-lg flex-1 text-center transition">Chat PDFs</a>
                 </div>
             </div>
 
@@ -241,8 +140,8 @@
                     <p class="text-xs text-slate-600 leading-relaxed">Rewrite, humanize, refine, and improve academic text in one editor.</p>
                 </div>
                 <div class="flex items-center gap-2 pt-2 border-t border-slate-100">
-                    <button onclick="switchWorkspace('AI Editor Info')" class="bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs font-bold px-3 py-2 rounded-lg flex-1 transition">Learn more</button>
-                    <button onclick="switchWorkspace('AI Editor')" class="bg-[#0b132b] hover:bg-slate-800 text-white text-xs font-bold px-3 py-2 rounded-lg flex-1 transition">Open Editor</button>
+                    <a href="tool.html?tool=ai-editor&type=info" class="bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs font-bold px-3 py-2 rounded-lg flex-1 text-center transition">Learn more</a>
+                    <a href="tool.html?tool=ai-editor&type=app" class="bg-[#0b132b] hover:bg-slate-800 text-white text-xs font-bold px-3 py-2 rounded-lg flex-1 text-center transition">Open Editor</a>
                 </div>
             </div>
 
@@ -255,8 +154,8 @@
                     <p class="text-xs text-slate-600 leading-relaxed">Organize papers, PDFs, notes, citations, and source material.</p>
                 </div>
                 <div class="flex items-center gap-2 pt-2 border-t border-slate-100">
-                    <button onclick="switchWorkspace('Library Info')" class="bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs font-bold px-3 py-2 rounded-lg flex-1 transition">Learn more</button>
-                    <button onclick="switchWorkspace('Library')" class="bg-[#0b132b] hover:bg-slate-800 text-white text-xs font-bold px-3 py-2 rounded-lg flex-1 transition">Open Library</button>
+                    <a href="tool.html?tool=library&type=info" class="bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs font-bold px-3 py-2 rounded-lg flex-1 text-center transition">Learn more</a>
+                    <a href="tool.html?tool=library&type=app" class="bg-[#0b132b] hover:bg-slate-800 text-white text-xs font-bold px-3 py-2 rounded-lg flex-1 text-center transition">Open Library</a>
                 </div>
             </div>
 
@@ -269,8 +168,8 @@
                     <p class="text-xs text-slate-600 leading-relaxed">Convert thesis chapters into a journal-ready manuscript with tables.</p>
                 </div>
                 <div class="flex items-center gap-2 pt-2 border-t border-slate-100">
-                    <button onclick="switchWorkspace('Thesis to Manuscript Info')" class="bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs font-bold px-3 py-2 rounded-lg flex-1 transition">Learn more</button>
-                    <button onclick="switchWorkspace('Thesis to Manuscript')" class="bg-[#0b132b] hover:bg-slate-800 text-white text-xs font-bold px-3 py-2 rounded-lg flex-1 transition">Convert thesis</button>
+                    <a href="tool.html?tool=thesis-manuscript&type=info" class="bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs font-bold px-3 py-2 rounded-lg flex-1 text-center transition">Learn more</a>
+                    <a href="tool.html?tool=thesis-manuscript&type=app" class="bg-[#0b132b] hover:bg-slate-800 text-white text-xs font-bold px-3 py-2 rounded-lg flex-1 text-center transition">Convert thesis</a>
                 </div>
             </div>
 
@@ -283,8 +182,8 @@
                     <p class="text-xs text-slate-600 leading-relaxed">Multiagent proposal and literature writing with citation styles.</p>
                 </div>
                 <div class="flex items-center gap-2 pt-2 border-t border-slate-100">
-                    <button onclick="switchWorkspace('Proposal Studio Info')" class="bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs font-bold px-3 py-2 rounded-lg flex-1 transition">Learn more</button>
-                    <button onclick="switchWorkspace('Proposal Studio')" class="bg-[#0b132b] hover:bg-slate-800 text-white text-xs font-bold px-3 py-2 rounded-lg flex-1 transition">Use studio</button>
+                    <a href="tool.html?tool=proposal-studio&type=info" class="bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs font-bold px-3 py-2 rounded-lg flex-1 text-center transition">Learn more</a>
+                    <a href="tool.html?tool=proposal-studio&type=app" class="bg-[#0b132b] hover:bg-slate-800 text-white text-xs font-bold px-3 py-2 rounded-lg flex-1 text-center transition">Use studio</a>
                 </div>
             </div>
 
@@ -297,8 +196,8 @@
                     <p class="text-xs text-slate-600 leading-relaxed">Generate citations and manage references for academic writing.</p>
                 </div>
                 <div class="flex items-center gap-2 pt-2 border-t border-slate-100">
-                    <button onclick="switchWorkspace('Citation Generator Info')" class="bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs font-bold px-3 py-2 rounded-lg flex-1 transition">Learn more</button>
-                    <button onclick="switchWorkspace('Citation Generator')" class="bg-[#0b132b] hover:bg-slate-800 text-white text-xs font-bold px-3 py-2 rounded-lg flex-1 transition">Generate citations</button>
+                    <a href="tool.html?tool=citation-generator&type=info" class="bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs font-bold px-3 py-2 rounded-lg flex-1 text-center transition">Learn more</a>
+                    <a href="tool.html?tool=citation-generator&type=app" class="bg-[#0b132b] hover:bg-slate-800 text-white text-xs font-bold px-3 py-2 rounded-lg flex-1 text-center transition">Generate citations</a>
                 </div>
             </div>
 
@@ -311,8 +210,8 @@
                     <p class="text-xs text-slate-600 leading-relaxed">Generate proposals, thesis sections, and long-form documents.</p>
                 </div>
                 <div class="flex items-center gap-2 pt-2 border-t border-slate-100">
-                    <button onclick="switchWorkspace('AI Thesis Info')" class="bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs font-bold px-3 py-2 rounded-lg flex-1 transition">Learn more</button>
-                    <button onclick="switchWorkspace('AI Thesis')" class="bg-[#0b132b] hover:bg-slate-800 text-white text-xs font-bold px-3 py-2 rounded-lg flex-1 transition">Build thesis</button>
+                    <a href="tool.html?tool=ai-thesis&type=info" class="bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs font-bold px-3 py-2 rounded-lg flex-1 text-center transition">Learn more</a>
+                    <a href="tool.html?tool=ai-thesis&type=app" class="bg-[#0b132b] hover:bg-slate-800 text-white text-xs font-bold px-3 py-2 rounded-lg flex-1 text-center transition">Build thesis</a>
                 </div>
             </div>
 
@@ -325,8 +224,8 @@
                     <p class="text-xs text-slate-600 leading-relaxed">Review manuscripts for structure, clarity, and journal readiness.</p>
                 </div>
                 <div class="flex items-center gap-2 pt-2 border-t border-slate-100">
-                    <button onclick="switchWorkspace('Manuscript Reviewer Info')" class="bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs font-bold px-3 py-2 rounded-lg flex-1 transition">Learn more</button>
-                    <button onclick="switchWorkspace('Manuscript Reviewer')" class="bg-[#0b132b] hover:bg-slate-800 text-white text-xs font-bold px-3 py-2 rounded-lg flex-1 transition">Review manuscript</button>
+                    <a href="tool.html?tool=manuscript-reviewer&type=info" class="bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs font-bold px-3 py-2 rounded-lg flex-1 text-center transition">Learn more</a>
+                    <a href="tool.html?tool=manuscript-reviewer&type=app" class="bg-[#0b132b] hover:bg-slate-800 text-white text-xs font-bold px-3 py-2 rounded-lg flex-1 text-center transition">Review manuscript</a>
                 </div>
             </div>
 
@@ -339,8 +238,8 @@
                     <p class="text-xs text-slate-600 leading-relaxed">Analyze datasets, compare groups, and produce summaries.</p>
                 </div>
                 <div class="flex items-center gap-2 pt-2 border-t border-slate-100">
-                    <button onclick="switchWorkspace('Data Analysis Info')" class="bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs font-bold px-3 py-2 rounded-lg flex-1 transition">Learn more</button>
-                    <button onclick="switchWorkspace('Data Analysis')" class="bg-[#0b132b] hover:bg-slate-800 text-white text-xs font-bold px-3 py-2 rounded-lg flex-1 transition">Analyze data</button>
+                    <a href="tool.html?tool=data-analysis&type=info" class="bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs font-bold px-3 py-2 rounded-lg flex-1 text-center transition">Learn more</a>
+                    <a href="tool.html?tool=data-analysis&type=app" class="bg-[#0b132b] hover:bg-slate-800 text-white text-xs font-bold px-3 py-2 rounded-lg flex-1 text-center transition">Analyze data</a>
                 </div>
             </div>
 
@@ -353,97 +252,13 @@
                     <p class="text-xs text-slate-600 leading-relaxed">Run structured evidence reviews with screening and synthesis.</p>
                 </div>
                 <div class="flex items-center gap-2 pt-2 border-t border-slate-100">
-                    <button onclick="switchWorkspace('Systematic Review Info')" class="bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs font-bold px-3 py-2 rounded-lg flex-1 transition">Learn more</button>
-                    <button onclick="switchWorkspace('Systematic Review')" class="bg-[#0b132b] hover:bg-slate-800 text-white text-xs font-bold px-3 py-2 rounded-lg flex-1 transition">Start review</button>
+                    <a href="tool.html?tool=systematic-review&type=info" class="bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs font-bold px-3 py-2 rounded-lg flex-1 text-center transition">Learn more</a>
+                    <a href="tool.html?tool=systematic-review&type=app" class="bg-[#0b132b] hover:bg-slate-800 text-white text-xs font-bold px-3 py-2 rounded-lg flex-1 text-center transition">Start review</a>
                 </div>
             </div>
 
         </div>
 
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="bg-amber-50/50 border-y border-amber-200/60 py-16 px-4">
-        <div class="max-w-6xl mx-auto space-y-8">
-            <div class="text-center space-y-2">
-                <span class="text-xs font-bold text-amber-600 uppercase tracking-widest">TESTIMONIALS</span>
-                <h2 class="text-3xl sm:text-4xl font-black text-[#0b132b]">
-                    Built for researchers who need evidence they can trust
-                </h2>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4 flex flex-col justify-between">
-                    <p class="text-xs sm:text-sm text-slate-700 font-semibold leading-relaxed">
-                        "Researched.ai has completely streamlined how my research group conducts systematic literature mapping."
-                    </p>
-                    <div>
-                        <h4 class="text-xs font-extrabold text-slate-900">Dr. Marcus Vance</h4>
-                        <p class="text-[11px] text-slate-500">Associate Professor of Molecular Biology (Stanford University)</p>
-                    </div>
-                </div>
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4 flex flex-col justify-between">
-                    <p class="text-xs sm:text-sm text-slate-700 font-semibold leading-relaxed">
-                        "The ability to aggregate cross-repository findings from Crossref and Semantic Scholar in real time makes literature synthesis effortless."
-                    </p>
-                    <div>
-                        <h4 class="text-xs font-extrabold text-slate-900">Prof. Elena Rostova</h4>
-                        <p class="text-[11px] text-slate-500">Senior Researcher in Quantum Computing (ETH Zürich)</p>
-                    </div>
-                </div>
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4 flex flex-col justify-between">
-                    <p class="text-xs sm:text-sm text-slate-700 font-semibold leading-relaxed">
-                        "From filtering open-access papers to extracting structured citations directly into our workspace notes, this platform bridges the gap."
-                    </p>
-                    <div>
-                        <h4 class="text-xs font-extrabold text-slate-900">Dr. Charlotte Sterling</h4>
-                        <p class="text-[11px] text-slate-500">Postdoctoral Fellow in Clinical Epidemiology (Oxford University)</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="max-w-6xl mx-auto px-4 py-16 w-full space-y-8">
-        <div class="text-center space-y-2">
-            <span class="text-xs font-bold text-blue-600 uppercase tracking-widest">PRICING</span>
-            <h2 class="text-3xl sm:text-4xl font-black text-[#0b132b]">Simple, transparent plans for researchers & labs</h2>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm space-y-4">
-                <div class="text-3xl font-black text-[#0b132b]">$0 <span class="text-xs font-normal text-slate-500">/ forever</span></div>
-                <p class="text-xs text-slate-600">Basic public search and manual citation notes.</p>
-                <button onclick="switchWorkspace('Free Tier')" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs py-3 rounded-xl">Current Plan</button>
-            </div>
-            <div class="bg-white border-2 border-blue-600 rounded-3xl p-6 shadow-xl space-y-4">
-                <div class="text-3xl font-black text-[#0b132b]">$19 <span class="text-xs font-normal text-slate-500">/ month</span></div>
-                <p class="text-xs text-slate-600">Unlimited PDF chat, AI editor, and cloud library.</p>
-                <button onclick="switchWorkspace('Pro Researcher Checkout')" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs py-3 rounded-xl shadow-md">Upgrade to Pro</button>
-            </div>
-            <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm space-y-4">
-                <div class="text-3xl font-black text-[#0b132b]">$99 <span class="text-xs font-normal text-slate-500">/ month</span></div>
-                <p class="text-xs text-slate-600">Team licenses and 200+ AI agent clusters.</p>
-                <button onclick="switchWorkspace('Institutional Inquiry')" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs py-3 rounded-xl">Contact Sales</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQs Section -->
-    <section id="faqs" class="max-w-4xl mx-auto px-4 py-16 w-full space-y-8">
-        <div class="text-center space-y-2">
-            <span class="text-xs font-bold text-amber-600 uppercase tracking-widest">FAQS</span>
-            <h2 class="text-3xl sm:text-4xl font-black text-[#0b132b]">Clear answers before signup</h2>
-        </div>
-        <div class="space-y-3">
-            <details class="group bg-white border border-slate-200 rounded-2xl p-5 shadow-xs cursor-pointer">
-                <summary class="flex items-center justify-between font-bold text-sm text-slate-800 list-none">
-                    <span>Can visitors try the system before signing up?</span>
-                    <i class="fa-solid fa-chevron-down text-xs text-slate-400 group-open:rotate-180"></i>
-                </summary>
-                <p class="text-xs text-slate-600 mt-3 pl-6">Yes. Explore first opens the system with no account required.</p>
-            </details>
-        </div>
     </section>
 
     <!-- Footer -->
@@ -451,170 +266,5 @@
         <p>&copy; 2026 Researched.ai. Multi-Source Grounded Academic Engine.</p>
     </footer>
 
-    <!-- Interactive JavaScript -->
-    <script>
-        function toggleDropdown(event) {
-            event.stopPropagation();
-            const dd = document.getElementById('features-dropdown');
-            dd.classList.toggle('hidden');
-        }
-
-        window.addEventListener('click', () => {
-            const dd = document.getElementById('features-dropdown');
-            if (dd && !dd.classList.contains('hidden')) dd.classList.add('hidden');
-        });
-
-        function resetWorkspace() {
-            document.getElementById('workspace-title').innerText = "Select a workflow card below to launch tool";
-            document.getElementById('workspace-content').innerHTML = `<p>Click any **Learn more** or action button on the 12 workflow cards to immediately load the corresponding interactive workspace right here.</p>`;
-        }
-
-        function switchWorkspace(mode) {
-            const titleElem = document.getElementById('workspace-title');
-            const contentElem = document.getElementById('workspace-content');
-            const iconElem = document.getElementById('workspace-icon');
-            
-            // Scroll to workspace smoothly
-            document.getElementById('active-workspace').scrollIntoView({ behavior: 'smooth' });
-
-            if (mode.includes('Info')) {
-                iconElem.className = "fa-solid fa-circle-info text-lg";
-                titleElem.innerText = mode.replace(' Info', '') + " — Overview & Documentation";
-                contentElem.innerHTML = `
-                    <div class="space-y-3 bg-slate-900/80 p-5 rounded-2xl border border-slate-800">
-                        <p class="text-xs text-slate-300 leading-relaxed">Detailed technical documentation and workflow guide for <strong>${mode.replace(' Info', '')}</strong>. Designed to integrate seamlessly with Crossref, Semantic Scholar, and PubMed API streams.</p>
-                        <div class="pt-2 flex gap-3">
-                            <button onclick="switchWorkspace('${mode.replace(' Info', '')}')" class="bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs px-4 py-2 rounded-xl transition">Launch Active Tool &rarr;</button>
-                        </div>
-                    </div>`;
-                return;
-            }
-
-            switch(mode) {
-                case 'Deep Reasoning':
-                    iconElem.className = "fa-solid fa-brain text-lg";
-                    titleElem.innerText = "Deep Reasoning AI Cluster (200+ Agents)";
-                    contentElem.innerHTML = `
-                        <div class="space-y-3 bg-slate-900/80 p-5 rounded-2xl border border-slate-800">
-                            <label class="text-xs font-bold text-blue-400">Enter research hypothesis for multiagent cross-examination:</label>
-                            <div class="flex gap-2">
-                                <input type="text" id="deep-prompt" value="Evaluate efficacy of monoclonal antibodies in early oncology trials" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-xs text-slate-100">
-                                <button onclick="runDeepCluster()" class="bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold px-4 py-2 rounded-lg shrink-0">Run Cluster</button>
-                            </div>
-                            <div id="deep-output" class="text-xs text-slate-300 bg-slate-950 p-3 rounded-lg border border-slate-800 min-h-[80px]">Cluster idle. Ready to execute multi-agent literature sweep.</div>
-                        </div>`;
-                    break;
-                case 'PDF Chat':
-                    iconElem.className = "fa-solid fa-file-pdf text-lg";
-                    titleElem.innerText = "PDF Document Chat & Evidence Extraction";
-                    contentElem.innerHTML = `
-                        <div class="space-y-3 bg-slate-900/80 p-5 rounded-2xl border border-slate-800">
-                            <div class="border-2 border-dashed border-slate-700 rounded-xl p-6 text-center space-y-2">
-                                <i class="fa-solid fa-cloud-arrow-up text-2xl text-blue-400"></i>
-                                <p class="text-xs font-bold text-slate-200">Drag & drop research PDFs here or click to browse</p>
-                                <input type="file" id="pdf-upload" class="hidden" onchange="simulatePdfUpload()">
-                                <button onclick="document.getElementById('pdf-upload').click()" class="bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold px-4 py-2 rounded-xl">Select PDF File</button>
-                            </div>
-                            <div id="pdf-status" class="text-xs text-slate-300">No document currently loaded.</div>
-                        </div>`;
-                    break;
-                case 'AI Editor':
-                    iconElem.className = "fa-solid fa-pen-nib text-lg";
-                    titleElem.innerText = "AI Academic Manuscript Editor";
-                    contentElem.innerHTML = `
-                        <div class="space-y-3 bg-slate-900/80 p-5 rounded-2xl border border-slate-800">
-                            <label class="text-xs font-bold text-blue-400">Paste manuscript text for scholarly tone refinement & humanization:</label>
-                            <textarea id="editor-text" rows="4" class="w-full bg-slate-950 border border-slate-700 rounded-lg p-3 text-xs text-slate-200">The results demonstrates significant improvements in cross-platform latency when deploying multi-agent retrieval frameworks.</textarea>
-                            <div class="flex gap-2">
-                                <button onclick="runEditorFix()" class="bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold px-4 py-2 rounded-lg">Polish Academic Tone</button>
-                                <button onclick="document.getElementById('editor-text').value=''" class="bg-slate-800 text-slate-300 text-xs px-3 py-2 rounded-lg">Clear</button>
-                            </div>
-                        </div>`;
-                    break;
-                case 'Library':
-                    iconElem.className = "fa-solid fa-folder-open text-lg";
-                    titleElem.innerText = "Cloud Reference Library";
-                    contentElem.innerHTML = `
-                        <div class="space-y-3 bg-slate-900/80 p-5 rounded-2xl border border-slate-800">
-                            <div class="flex justify-between items-center text-xs font-bold text-slate-300">
-                                <span>Saved References (3 items)</span>
-                                <span class="text-blue-400">Synced to Cloud</span>
-                            </div>
-                            <div class="space-y-2 text-xs">
-                                <div class="bg-slate-950 p-2.5 rounded border border-slate-800">1. Semaglutide in Adolescent Obesity (NEJM, 2025). DOI: 10.1056/NEJMoa...</div>
-                                <div class="bg-slate-950 p-2.5 rounded border border-slate-800">2. Multiagent AI in Scholarly Search (Nature, 2026). DOI: 10.1038/s41586...</div>
-                            </div>
-                        </div>`;
-                    break;
-                default:
-                    iconElem.className = "fa-solid fa-laptop-code text-lg";
-                    titleElem.innerText = mode + " Workspace";
-                    contentElem.innerHTML = `
-                        <div class="space-y-3 bg-slate-900/80 p-5 rounded-2xl border border-slate-800">
-                            <p class="text-xs text-slate-300">Interactive workspace initialized for <strong>${mode}</strong>. All API connectors and multiagent pipelines are online.</p>
-                            <button onclick="alert('${mode} task executed successfully!')" class="bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold px-4 py-2 rounded-xl">Execute Tool Action</button>
-                        </div>`;
-            }
-        }
-
-        function runDeepCluster() {
-            document.getElementById('deep-output').innerHTML = `<i class="fa-solid fa-spinner fa-spin text-blue-400"></i> Querying 200+ agents across Semantic Scholar and PubMed graph... Done. 42 citations verified.`;
-        }
-
-        function simulatePdfUpload() {
-            document.getElementById('pdf-status').innerHTML = `<span class="text-green-400 font-bold"><i class="fa-solid fa-check"></i> Document successfully parsed! 4 tables and 18 equations indexed for chat.</span>`;
-        }
-
-        function runEditorFix() {
-            document.getElementById('editor-text').value = "The results demonstrate significant improvements in cross-platform latency when deploying multi-agent retrieval frameworks.";
-        }
-
-        async function executePlaygroundSearch() {
-            const query = document.getElementById('main-query').value.trim();
-            const win = document.getElementById('results-window');
-            if (!query) return;
-
-            win.innerHTML = `<div class="py-12"><i class="fa-solid fa-spinner fa-spin text-2xl text-teal-600"></i><p class="text-xs font-bold text-slate-600 mt-2">Querying indexed APIs...</p></div>`;
-
-            let results = [];
-            try {
-                const res = await fetch(`https://api.semanticscholar.org/graph/v1/paper/search?query=${encodeURIComponent(query)}&limit=3&fields=title,authors,year,externalIds,abstract`);
-                if (res.ok) {
-                    const data = await res.json();
-                    (data.data || []).forEach(p => {
-                        results.push({
-                            title: p.title,
-                            authors: (p.authors || []).map(a => a.name).join(', ') || 'Unknown Authors',
-                            year: p.year || 'N/A',
-                            source: 'Semantic Scholar',
-                            abstract: p.abstract || 'No abstract record available.'
-                        });
-                    });
-                }
-            } catch (e) {}
-
-            if (results.length === 0) {
-                win.innerHTML = `<div class="py-8 text-slate-500 text-xs font-bold">No records found.</div>`;
-                return;
-            }
-
-            win.innerHTML = `
-                <div class="text-left w-full space-y-3">
-                    <div class="flex items-center justify-between border-b border-slate-200 pb-2">
-                        <span class="text-xs font-bold text-slate-700">${results.length} Papers Aggregated</span>
-                        <span class="text-[10px] bg-teal-100 text-teal-800 font-bold px-2 py-0.5 rounded">Live Feed</span>
-                    </div>
-                    <div class="space-y-3">
-                        ${results.map(r => `
-                            <div class="bg-white border border-slate-200 rounded-xl p-3 shadow-2xs space-y-1">
-                                <h4 class="text-xs font-bold text-blue-900">${r.title}</h4>
-                                <p class="text-[11px] text-slate-500 line-clamp-2">${r.abstract}</p>
-                                <div class="text-[10px] text-slate-400">${r.authors} (${r.year})</div>
-                            </div>
-                        `).join('')}
-                    </div>
-                </div>`;
-        }
-    </script>
 </body>
 </html>
