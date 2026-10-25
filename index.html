@@ -1,106 +1,728 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Researched.ai - Commercial Academic Research Platform</title>
+    <title>Researched.ai - Grounded Academic Research Suite</title>
     <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; }
-        .gradient-text {
-            background: linear-gradient(135deg, #2563eb, #7c3aed);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col">
+<body class="bg-[#f3f4f6] text-slate-900 min-h-screen flex flex-col antialiased">
 
-    <!-- Top Navigation Header -->
-    <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <div class="bg-blue-600 text-white p-2 rounded-lg font-bold">
-                    <i class="fa-solid fa-atom text-xl"></i>
-                </div>
-                <span class="text-xl font-bold tracking-tight text-white">Researched<span class="text-blue-500">.ai</span></span>
-            </div>
+    <!-- Top Navigation Pill Container -->
+    <div class="sticky top-4 z-50 max-w-6xl mx-auto px-4 w-full">
+        <header class="bg-white/95 backdrop-blur-md border border-slate-200/80 shadow-lg shadow-slate-200/50 rounded-full px-6 py-2.5 flex items-center justify-between">
             
-            <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-300">
-                <a href="#search" class="hover:text-white transition">Search Engine</a>
-                <a href="#studio" class="hover:text-white transition">Studio Workspace</a>
-                <a href="#sources" class="hover:text-white transition">Integrated Sources</a>
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-2.5">
+                <div class="bg-[#0b132b] text-white w-9 h-9 rounded-full flex items-center justify-center font-bold shadow-inner">
+                    <i class="fa-solid fa-atom text-base"></i>
+                </div>
+                <span class="text-xl font-extrabold tracking-tight text-[#0b132b]">Researched<span class="text-blue-600">.ai</span></span>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-700">
+                <a href="#" class="hover:text-blue-600 transition">Home</a>
+                <div class="relative group cursor-pointer flex items-center gap-1 hover:text-blue-600 transition">
+                    <span>Features</span>
+                    <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                </div>
+                <a href="#workflows" class="hover:text-blue-600 transition">Workflows</a>
+                <a href="#pricing" class="hover:text-blue-600 transition">Pricing</a>
+                <a href="#faqs" class="hover:text-blue-600 transition">FAQs</a>
+                <a href="#corpus" class="hover:text-blue-600 transition">Blogs</a>
             </nav>
 
-            <div class="flex items-center space-x-4">
-                <button class="text-slate-400 hover:text-white text-sm font-medium transition">Sign In</button>
-                <button class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg text-sm font-semibold transition shadow-lg shadow-blue-600/30">
-                    Pro Access
-                </button>
+            <!-- Action Buttons -->
+            <div class="flex items-center gap-3">
+                <a href="#" class="hidden sm:flex items-center gap-1.5 text-xs font-bold text-slate-800 hover:text-blue-600 transition">
+                    <i class="fa-solid fa-globe text-amber-500"></i>
+                    <span>Signin/Register</span>
+                </a>
+                <a href="#playground" class="bg-[#0b132b] hover:bg-slate-800 text-white px-5 py-2.5 rounded-full text-xs font-bold tracking-wide transition shadow-md flex flex-col items-center leading-tight">
+                    <span>Explore Researched.ai</span>
+                    <span class="text-[9px] font-normal text-slate-300">No login required</span>
+                </a>
+            </div>
+        </header>
+    </div>
+
+    <!-- Hero Announcement & Heading Section -->
+    <section class="pt-16 pb-10 px-4 text-center max-w-4xl mx-auto space-y-4">
+        <div class="inline-flex items-center gap-2 text-xs font-semibold text-slate-700 bg-white border border-slate-200/80 px-4 py-1.5 rounded-full shadow-xs">
+            <i class="fa-solid fa-bolt text-amber-500"></i>
+            <span>Created by PhD professors specifically for Research.</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-[#0b132b] tracking-tight leading-tight">
+            Do hours of research in Minutes with AI
+        </h1>
+
+        <p class="text-2xl sm:text-3xl font-extrabold text-blue-700 tracking-tight">
+            Finding papers is as Easy as ABC.
+        </p>
+
+        <p class="text-slate-600 font-medium text-base sm:text-lg pt-1">
+            The world's most intelligent academic research AI suite.
+        </p>
+
+        <div class="pt-2">
+            <a href="#playground" class="inline-block bg-[#0b132b] hover:bg-slate-800 text-white font-bold text-sm px-8 py-3.5 rounded-xl shadow-lg transition">
+                Start Using Researched.ai
+            </a>
+        </div>
+    </section>
+
+    <!-- Public Research Playground Section -->
+    <section id="playground" class="max-w-6xl mx-auto px-4 py-8 w-full">
+        <div class="bg-white border border-slate-200/80 rounded-3xl p-6 sm:p-8 shadow-xl space-y-6">
+            
+            <div class="space-y-1">
+                <span class="text-xs font-bold tracking-wider text-teal-600 uppercase flex items-center gap-1">
+                    <i class="fa-solid fa-code-branch"></i> Public Research Playground
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-black text-[#0b132b]">
+                    Search the scholarly graph before you sign in.
+                </h2>
+                <p class="text-xs sm:text-sm text-slate-500">
+                    Try a research question, Boolean search string, or entity lookup across works, authors, journals, institutions, funders, and topics.
+                </p>
+            </div>
+
+            <!-- Playground Main Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Left Control Panel: Search Inputs & Filters -->
+                <div class="lg:col-span-5 space-y-5 bg-slate-50/70 p-5 rounded-2xl border border-slate-200/60">
+                    
+                    <!-- Research Question Field -->
+                    <div class="space-y-1.5">
+                        <label class="text-xs font-bold text-slate-700">Research question</label>
+                        <div class="flex gap-2">
+                            <input type="text" id="main-query" value="semaglutide adolescent obesity randomized trial" 
+                                class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs text-slate-800 font-medium focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <button onclick="executePlaygroundSearch()" class="bg-[#0b132b] hover:bg-slate-800 text-white px-4 py-2 rounded-lg text-xs font-bold transition flex items-center gap-1.5 shrink-0">
+                                <i class="fa-solid fa-magnifying-glass"></i> Search
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Search String Builder -->
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between">
+                            <label class="text-xs font-bold text-slate-700 flex items-center gap-1">
+                                <i class="fa-solid fa-[#]"></i> Search string builder
+                            </label>
+                            <label class="flex items-center gap-1 text-[11px] text-slate-500 font-medium cursor-pointer">
+                                <input type="checkbox" checked class="rounded border-slate-300 text-blue-600">
+                                <span>Auto build from question</span>
+                            </label>
+                        </div>
+
+                        <div class="space-y-1.5 text-xs">
+                            <div class="flex items-center gap-2">
+                                <span class="w-12 bg-slate-200 text-slate-600 font-bold px-2 py-1 rounded text-[10px] text-center">AND</span>
+                                <input type="text" id="term-1" value="semaglutide" class="w-full bg-white border border-slate-200 rounded px-2.5 py-1 text-slate-700">
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="w-12 bg-slate-200 text-slate-600 font-bold px-2 py-1 rounded text-[10px] text-center">AND</span>
+                                <input type="text" id="term-2" value="adolescent obesity" class="w-full bg-white border border-slate-200 rounded px-2.5 py-1 text-slate-700">
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="w-12 bg-slate-200 text-slate-600 font-bold px-2 py-1 rounded text-[10px] text-center">AND</span>
+                                <input type="text" id="term-3" value="randomized trial" class="w-full bg-white border border-slate-200 rounded px-2.5 py-1 text-slate-700">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sources & Filters Selection -->
+                    <div class="grid grid-cols-2 gap-4 border-t border-slate-200/80 pt-4">
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-slate-700">Sources</label>
+                            <div class="flex flex-wrap gap-1.5">
+                                <label class="cursor-pointer">
+                                    <input type="checkbox" id="src-semanticscholar" checked class="hidden peer">
+                                    <span class="inline-block text-[11px] font-bold px-2.5 py-1 rounded-lg border border-teal-600 text-teal-700 bg-teal-50 peer-checked:bg-teal-600 peer-checked:text-white transition">Semantic Scholar</span>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="checkbox" id="src-pubmed" checked class="hidden peer">
+                                    <span class="inline-block text-[11px] font-bold px-2.5 py-1 rounded-lg border border-teal-600 text-teal-700 bg-teal-50 peer-checked:bg-teal-600 peer-checked:text-white transition">PubMed</span>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="checkbox" id="src-crossref" checked class="hidden peer">
+                                    <span class="inline-block text-[11px] font-bold px-2.5 py-1 rounded-lg border border-teal-600 text-teal-700 bg-teal-50 peer-checked:bg-teal-600 peer-checked:text-white transition">Crossref</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-slate-700">Filters</label>
+                            <div class="space-y-1 text-xs text-slate-600 font-medium">
+                                <label class="flex items-center gap-1.5 cursor-pointer">
+                                    <input type="checkbox" class="rounded border-slate-300">
+                                    <span>Open access</span>
+                                </label>
+                                <label class="flex items-center gap-1.5 cursor-pointer">
+                                    <input type="checkbox" class="rounded border-slate-300">
+                                    <span>Last 5 years</span>
+                                </label>
+                                <label class="flex items-center gap-1.5 cursor-pointer">
+                                    <input type="checkbox" checked class="rounded border-slate-300 text-blue-600">
+                                    <span>AI snapshot</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Search Areas Pills -->
+                    <div class="space-y-2 border-t border-slate-200/80 pt-4">
+                        <label class="text-xs font-bold text-slate-700">Search areas</label>
+                        <div class="flex flex-wrap gap-1.5">
+                            <button class="bg-[#0b132b] text-white text-[11px] font-bold px-3 py-1 rounded-md">Works</button>
+                            <button class="bg-[#0b132b] text-white text-[11px] font-bold px-3 py-1 rounded-md">Authors</button>
+                            <button class="bg-[#0b132b] text-white text-[11px] font-bold px-3 py-1 rounded-md">Journals</button>
+                            <button class="bg-[#0b132b] text-white text-[11px] font-bold px-3 py-1 rounded-md">Institutions</button>
+                            <button class="bg-white border border-slate-200 text-slate-700 text-[11px] font-bold px-3 py-1 rounded-md">Funders</button>
+                            <button class="bg-white border border-slate-200 text-slate-700 text-[11px] font-bold px-3 py-1 rounded-md">Publishers</button>
+                            <button class="bg-white border border-slate-200 text-slate-700 text-[11px] font-bold px-3 py-1 rounded-md">Topics</button>
+                        </div>
+                    </div>
+
+                    <!-- Sample Topic Pills -->
+                    <div class="space-y-1.5 pt-2">
+                        <button onclick="setQuery('semaglutide adolescent obesity randomized trial')" class="block w-full text-left text-[11px] text-teal-800 font-medium bg-teal-50 border border-teal-200 px-2.5 py-1.5 rounded-lg truncate hover:bg-teal-100">
+                            semaglutide adolescent obesity randomized trial
+                        </button>
+                        <button onclick="setQuery('AI tutors clinical reasoning medical education')" class="block w-full text-left text-[11px] text-slate-600 font-medium bg-slate-100 border border-slate-200 px-2.5 py-1.5 rounded-lg truncate hover:bg-slate-200">
+                            AI tutors clinical reasoning medical education
+                        </button>
+                        <button onclick="setQuery('malaria vaccine East Africa implementation gaps')" class="block w-full text-left text-[11px] text-slate-600 font-medium bg-slate-100 border border-slate-200 px-2.5 py-1.5 rounded-lg truncate hover:bg-slate-200">
+                            malaria vaccine East Africa implementation gaps
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- Right Display Window: Dynamic Search Results Feed -->
+                <div class="lg:col-span-7 space-y-4">
+                    <div id="results-window" class="border-2 border-dashed border-slate-200 rounded-2xl p-8 text-center bg-slate-50/50 space-y-3 min-h-[420px] flex flex-col items-center justify-center">
+                        <div class="w-12 h-12 rounded-full bg-teal-100 text-teal-700 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-slate-800">A useful preview, not a dead search box.</h3>
+                        <p class="text-xs text-slate-500 max-w-sm">
+                            Search results return papers, entities, source coverage, and a grounded AI snapshot when configured. Click Search to execute.
+                        </p>
+                    </div>
+
+                    <!-- Studio Citation Scratchpad Drawer -->
+                    <div class="bg-slate-900 text-white rounded-2xl p-4 space-y-2 shadow-lg">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold text-teal-400 flex items-center gap-1.5">
+                                <i class="fa-solid fa-pen-to-square"></i> Studio Citation Notes
+                            </span>
+                            <button onclick="clearStudio()" class="text-[10px] text-slate-400 hover:text-white">Clear</button>
+                        </div>
+                        <textarea id="studio-notes" rows="3" placeholder="Click 'Add Citation' on search results to aggregate references here..." 
+                            class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2 text-xs text-slate-300 focus:outline-none"></textarea>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Workflows Grid Section (12 Feature Cards) -->
+    <section id="workflows" class="max-w-6xl mx-auto px-4 py-12 w-full space-y-8">
+        
+        <div class="space-y-2">
+            <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">FEATURES</span>
+            <h2 class="text-3xl sm:text-4xl font-black text-[#0b132b]">
+                Choose the Researched.ai workflow that matches your academic journey.
+            </h2>
+            <p class="text-sm text-slate-500">Pick a workflow, see how it works, then start with a clear account and subscription path.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+            
+            <!-- Card 1 -->
+            <div class="bg-white border border-slate-200/80 rounded-2xl p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between space-y-4">
+                <div class="space-y-2">
+                    <div class="flex items-center gap-2 text-amber-600 font-bold text-sm">
+                        <i class="fa-solid fa-[#]"></i> Deep Reasoning
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Multiagent research with 200+ AI agents for source-aware academic work.
+                    </p>
+                </div>
+                <div class="flex items-center gap-2 pt-2 border-t border-slate-100">
+                    <button class="bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold px-3 py-2 rounded-lg flex-1">Learn more</button>
+                    <button class="bg-[#0b132b] hover:bg-slate-800 text-white text-xs font-bold px-3 py-2 rounded-lg flex-1">Start deep research</button>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white border border-slate-200/80 rounded-2xl p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between space-y-4">
+                <div class="space-y-2">
+                    <div class="flex items-center gap-2 text-amber-600 font-bold text-sm">
+                        <i class="fa-solid fa-magnifying-glass"></i> Find Articles
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Search 300M+ articles, journals, authors, and grounded research search strings.
+                    </p>
+                </div>
+                <div class="flex items-center gap-2 pt-2 border-t border-slate-100">
+                    <button class="bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold px-3 py-2 rounded-lg flex-1">Learn more</button>
+                    <button class="bg-[#0b132b] hover:bg-slate-800 text-white text-xs font-bold px-3 py-2 rounded-lg flex-1">Find articles</button>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white border border-slate-200/80 rounded-2xl p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between space-y-4">
+                <div class="space-y-2">
+                    <div class="flex items-center gap-2 text-amber-600 font-bold text-sm">
+                        <i class="fa-solid fa-file-pdf"></i> PDF Chat
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Ask questions from PDFs and turn papers into usable evidence.
+                    </p>
+                </div>
+                <div class="flex items-center gap-2 pt-2 border-t border-slate-100">
+                    <button class="bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold px-3 py-2 rounded-lg flex-1">Learn more</button>
+                    <button class="bg-[#0b132b] hover:bg-slate-800 text-white text-xs font-bold px-3 py-2 rounded-lg flex-1">Chat with PDFs</button>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="bg-white border border-slate-200/80 rounded-2xl p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between space-y-4">
+                <div class="space-y-2">
+                    <div class="flex items-center gap-2 text-amber-600 font-bold text-sm">
+                        <i class="fa-solid fa-[#]"></i> AI Editor
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Rewrite, humanize, refine, and improve academic text in one editor.
+                    </p>
+                </div>
+                <div class="flex items-center gap-2 pt-2 border-t border-slate-100">
+                    <button class="bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold px-3 py-2 rounded-lg flex-1">Learn more</button>
+                    <button class="bg-[#0b132b] hover:bg-slate-800 text-white text-xs font-bold px-3 py-2 rounded-lg flex-1">Open AI Editor</button>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="bg-white border border-slate-200/80 rounded-2xl p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between space-y-4">
+                <div class="space-y-2">
+                    <div class="flex items-center gap-2 text-amber-600 font-bold text-sm">
+                        <i class="fa-solid fa-folder"></i> Library
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Organize papers, PDFs, notes, citations, and source material.
+                    </p>
+                </div>
+                <div class="flex items-center gap-2 pt-2 border-t border-slate-100">
+                    <button class="bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold px-3 py-2 rounded-lg flex-1">Learn more</button>
+                    <button class="bg-[#0b132b] hover:bg-slate-800 text-white text-xs font-bold px-3 py-2 rounded-lg flex-1">Open Library</button>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="bg-white border border-slate-200/80 rounded-2xl p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between space-y-4">
+                <div class="space-y-2">
+                    <div class="flex items-center gap-2 text-amber-600 font-bold text-sm">
+                        <i class="fa-solid fa-file-lines"></i> Thesis to Manuscript
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Convert thesis chapters into a journal-ready manuscript with tables and figures preserved.
+                    </p>
+                </div>
+                <div class="flex items-center gap-2 pt-2 border-t border-slate-100">
+                    <button class="bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold px-3 py-2 rounded-lg flex-1">Learn more</button>
+                    <button class="bg-[#0b132b] hover:bg-slate-800 text-white text-xs font-bold px-3 py-2 rounded-lg flex-1">Convert thesis</button>
+                </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="bg-white border border-slate-200/80 rounded-2xl p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between space-y-4">
+                <div class="space-y-2">
+                    <div class="flex items-center gap-2 text-amber-600 font-bold text-sm">
+                        <i class="fa-solid fa-layer-group"></i> Proposal & Literature Studio
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Multiagent proposal and literature writing with thousands of citation styles.
+                    </p>
+                </div>
+                <div class="flex items-center gap-2 pt-2 border-t border-slate-100">
+                    <button class="bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold px-3 py-2 rounded-lg flex-1">Learn more</button>
+                    <button class="bg-[#0b132b] hover:bg-slate-800 text-white text-xs font-bold px-3 py-2 rounded-lg flex-1">Use studio</button>
+                </div>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="bg-white border border-slate-200/80 rounded-2xl p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between space-y-4">
+                <div class="space-y-2">
+                    <div class="flex items-center gap-2 text-amber-600 font-bold text-sm">
+                        <i class="fa-solid fa-quote-right"></i> Citation Generator
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Generate citations and manage references for academic writing.
+                    </p>
+                </div>
+                <div class="flex items-center gap-2 pt-2 border-t border-slate-100">
+                    <button class="bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold px-3 py-2 rounded-lg flex-1">Learn more</button>
+                    <button class="bg-[#0b132b] hover:bg-slate-800 text-white text-xs font-bold px-3 py-2 rounded-lg flex-1">Generate citations</button>
+                </div>
+            </div>
+
+            <!-- Card 9 -->
+            <div class="bg-white border border-slate-200/80 rounded-2xl p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between space-y-4">
+                <div class="space-y-2">
+                    <div class="flex items-center gap-2 text-amber-600 font-bold text-sm">
+                        <i class="fa-solid fa-book"></i> AI Thesis
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Generate proposals, thesis sections, and long-form academic documents.
+                    </p>
+                </div>
+                <div class="flex items-center gap-2 pt-2 border-t border-slate-100">
+                    <button class="bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold px-3 py-2 rounded-lg flex-1">Learn more</button>
+                    <button class="bg-[#0b132b] hover:bg-slate-800 text-white text-xs font-bold px-3 py-2 rounded-lg flex-1">Build thesis</button>
+                </div>
+            </div>
+
+            <!-- Card 10 -->
+            <div class="bg-white border border-slate-200/80 rounded-2xl p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between space-y-4">
+                <div class="space-y-2">
+                    <div class="flex items-center gap-2 text-amber-600 font-bold text-sm">
+                        <i class="fa-solid fa-file-circle-check"></i> Manuscript Reviewer
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Review manuscripts for structure, clarity, journal fit, and readiness.
+                    </p>
+                </div>
+                <div class="flex items-center gap-2 pt-2 border-t border-slate-100">
+                    <button class="bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold px-3 py-2 rounded-lg flex-1">Learn more</button>
+                    <button class="bg-[#0b132b] hover:bg-slate-800 text-white text-xs font-bold px-3 py-2 rounded-lg flex-1">Review manuscript</button>
+                </div>
+            </div>
+
+            <!-- Card 11 -->
+            <div class="bg-white border border-slate-200/80 rounded-2xl p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between space-y-4">
+                <div class="space-y-2">
+                    <div class="flex items-center gap-2 text-amber-600 font-bold text-sm">
+                        <i class="fa-solid fa-chart-pie"></i> Data Analysis
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Analyze datasets, compare groups, and produce research-ready summaries.
+                    </p>
+                </div>
+                <div class="flex items-center gap-2 pt-2 border-t border-slate-100">
+                    <button class="bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold px-3 py-2 rounded-lg flex-1">Learn more</button>
+                    <button class="bg-[#0b132b] hover:bg-slate-800 text-white text-xs font-bold px-3 py-2 rounded-lg flex-1">Analyze data</button>
+                </div>
+            </div>
+
+            <!-- Card 12 -->
+            <div class="bg-white border border-slate-200/80 rounded-2xl p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between space-y-4">
+                <div class="space-y-2">
+                    <div class="flex items-center gap-2 text-amber-600 font-bold text-sm">
+                        <i class="fa-solid fa-circle-check"></i> Systematic Review
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Run structured evidence reviews with screening, extraction, and synthesis.
+                    </p>
+                </div>
+                <div class="flex items-center gap-2 pt-2 border-t border-slate-100">
+                    <button class="bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold px-3 py-2 rounded-lg flex-1">Learn more</button>
+                    <button class="bg-[#0b132b] hover:bg-slate-800 text-white text-xs font-bold px-3 py-2 rounded-lg flex-1">Start review</button>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="bg-[#fef3c7]/40 border-y border-amber-200/60 py-16 px-4">
+        <div class="max-w-6xl mx-auto space-y-8">
+            <div class="text-center space-y-2">
+                <span class="text-xs font-bold text-amber-600 uppercase tracking-widest">TESTIMONIALS</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-[#0b132b]">
+                    Built for researchers who need evidence they can trust
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs space-y-4 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="text-amber-400 flex gap-1 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-xs sm:text-sm text-slate-700 font-semibold leading-relaxed">
+                            "Researched.ai cut our literature search and proposal drafting time from days to a focused afternoon."
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-extrabold text-slate-900">Dr. Miriam A.</h4>
+                        <p class="text-[11px] text-slate-500">Public health researcher</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs space-y-4 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="text-amber-400 flex gap-1 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-xs sm:text-sm text-slate-700 font-semibold leading-relaxed">
+                            "The PDF chat and citation tools made it much easier for my students to defend every claim with evidence."
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-extrabold text-slate-900">Prof. Daniel K.</h4>
+                        <p class="text-[11px] text-slate-500">Graduate supervisor</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs space-y-4 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="text-amber-400 flex gap-1 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-xs sm:text-sm text-slate-700 font-semibold leading-relaxed">
+                            "I came for article search, then stayed because the research agent keeps the whole workflow connected."
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-extrabold text-slate-900">Sarah N.</h4>
+                        <p class="text-[11px] text-slate-500">PhD candidate</p>
+                    </div>
+                </div>
+
             </div>
         </div>
-    </header>
+    </section>
 
-    <!-- Main Content Area -->
-    <main class="flex-1 max-w-7xl w-full mx-auto px-4 py-8 space-y-10">
+    <!-- FAQs Section -->
+    <section id="faqs" class="max-w-4xl mx-auto px-4 py-16 w-full space-y-8">
+        <div class="text-center space-y-2">
+            <span class="text-xs font-bold text-amber-600 uppercase tracking-widest">FAQS</span>
+            <h2 class="text-3xl sm:text-4xl font-black text-[#0b132b]">
+                Clear answers before signup
+            </h2>
+        </div>
 
-        <!-- Hero Title Section -->
-        <section class="text-center space-y-4 max-w-3xl mx-auto">
-            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">
-                Grounded Academic Research, <span class="gradient-text">Unified</span>.
-            </h1>
-            <p class="text-slate-400 text-base md:text-lg">
-                Perform multi-source Boolean discovery across Crossref, Semantic Scholar, OpenAlex, and PubMed with structured citation synthesis.
-            </p>
-        </section>
+        <div class="space-y-3">
+            <details class="group bg-white border border-slate-200/80 rounded-2xl p-5 shadow-xs cursor-pointer">
+                <summary class="flex items-center justify-between font-bold text-sm text-slate-800 list-none">
+                    <span class="flex items-center gap-2"><i class="fa-regular fa-circle-question text-amber-500"></i> Can visitors try the system before signing up?</span>
+                    <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition group-open:rotate-180"></i>
+                </summary>
+                <p class="text-xs text-slate-600 mt-3 pl-6 leading-relaxed">
+                    Yes. Explore first opens the normal system with no account required.
+                </p>
+            </details>
 
-        <!-- Search & Source Configuration Module -->
-        <section id="search" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-6">
-            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800 pb-4">
-                <h2 class="text-lg font-semibold text-white flex items-center gap-2">
-                    <i class="fa-solid fa-magnifying-glass text-blue-500"></i> Multi-Source Search Builder
-                </h2>
-                <!-- Source Selection Toggles -->
-                <div id="sources" class="flex flex-wrap items-center gap-2 text-xs">
-                    <label class="flex items-center gap-1.5 bg-slate-800 border border-slate-700 px-3 py-1.5 rounded-full cursor-pointer hover:border-blue-500 transition">
-                        <input type="checkbox" id="src-semanticscholar" checked class="rounded border-slate-700 text-blue-600 focus:ring-0">
-                        <span>Semantic Scholar</span>
-                    </label>
-                    <label class="flex items-center gap-1.5 bg-slate-800 border border-slate-700 px-3 py-1.5 rounded-full cursor-pointer hover:border-blue-500 transition">
-                        <input type="checkbox" id="src-crossref" checked class="rounded border-slate-700 text-blue-600 focus:ring-0">
-                        <span>Crossref</span>
-                    </label>
-                    <label class="flex items-center gap-1.5 bg-slate-800 border border-slate-700 px-3 py-1.5 rounded-full cursor-pointer hover:border-blue-500 transition">
-                        <input type="checkbox" id="src-openalex" checked class="rounded border-slate-700 text-blue-600 focus:ring-0">
-                        <span>OpenAlex</span>
-                    </label>
-                    <label class="flex items-center gap-1.5 bg-slate-800 border border-slate-700 px-3 py-1.5 rounded-full cursor-pointer hover:border-blue-500 transition">
-                        <input type="checkbox" id="src-pubmed" checked class="rounded border-slate-700 text-blue-600 focus:ring-0">
-                        <span>PubMed</span>
-                    </label>
+            <details class="group bg-white border border-slate-200/80 rounded-2xl p-5 shadow-xs cursor-pointer">
+                <summary class="flex items-center justify-between font-bold text-sm text-slate-800 list-none">
+                    <span class="flex items-center gap-2"><i class="fa-regular fa-circle-question text-amber-500"></i> What happens when someone clicks a feature button?</span>
+                    <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition group-open:rotate-180"></i>
+                </summary>
+                <p class="text-xs text-slate-600 mt-3 pl-6 leading-relaxed">
+                    Clicking a feature opens the interactive workspace module immediately, allowing you to load queries or documents into that specific agent workflow.
+                </p>
+            </details>
+
+            <details class="group bg-white border border-slate-200/80 rounded-2xl p-5 shadow-xs cursor-pointer">
+                <summary class="flex items-center justify-between font-bold text-sm text-slate-800 list-none">
+                    <span class="flex items-center gap-2"><i class="fa-regular fa-circle-question text-amber-500"></i> Is the content generated by Researched.ai detectable by Turnitin?</span>
+                    <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition group-open:rotate-180"></i>
+                </summary>
+                <p class="text-xs text-slate-600 mt-3 pl-6 leading-relaxed">
+                    Researched.ai focuses on source-grounded synthesis and direct citation management, ensuring all output is tied directly to real indexed literature with verified DOIs.
+                </p>
+            </details>
+        </div>
+    </section>
+
+    <!-- Corpus & Developer Banner -->
+    <section id="corpus" class="max-w-6xl mx-auto px-4 pb-16 w-full">
+        <div class="bg-gradient-to-r from-orange-50/60 to-amber-50/60 border border-amber-200/80 rounded-3xl p-8 shadow-sm grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+            
+            <div class="md:col-span-7 space-y-4">
+                <span class="text-[10px] font-extrabold text-amber-700 uppercase tracking-widest bg-amber-100 px-2 py-1 rounded">
+                    THE RESEARCH ENGINE BEHIND RESEARCHED.AI
+                </span>
+                <h3 class="text-2xl sm:text-3xl font-black text-[#0b132b]">
+                    Powered by Researched.ai Scholar
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    Scholar is our own academic corpus, drawn from Google Scholar, PubMed, Semantic Scholar, Crossref, arXiv and more. Every search, citation check and review you run here uses it.
+                </p>
+                <div class="flex flex-wrap gap-2 text-xs">
+                    <span class="bg-white border border-slate-200 font-bold px-3 py-1.5 rounded-xl text-slate-700">Paper metadata</span>
+                    <span class="bg-white border border-slate-200 font-bold px-3 py-1.5 rounded-xl text-slate-700">Full text and files</span>
+                    <span class="bg-white border border-slate-200 font-bold px-3 py-1.5 rounded-xl text-slate-700">Research MCP for AI agents</span>
+                </div>
+                <div class="pt-2">
+                    <a href="#playground" class="inline-block bg-amber-700 hover:bg-amber-800 text-white font-bold text-xs px-6 py-3 rounded-xl transition">
+                        Start researching &rarr;
+                    </a>
                 </div>
             </div>
 
-            <!-- Search Inputs -->
-            <div class="space-y-4">
-                <div class="flex gap-2">
-                    <div class="relative flex-1">
-                        <input type="text" id="query-input" placeholder="Enter keywords, DOIs, or topic (e.g., 'machine learning healthcare')..." 
-                            class="w-full bg-slate-950 border border-slate-700 text-slate-100 placeholder-slate-500 rounded-xl px-4 py-3.5 pl-11 text-sm focus:outline-none focus:border-blue-500 transition">
-                        <i class="fa-solid fa-search absolute left-4 top-4 text-slate-500"></i>
+            <div class="md:col-span-5 space-y-4 border-t md:border-t-0 md:border-l border-amber-200/80 pt-6 md:pt-0 md:pl-8">
+                <div class="grid grid-cols-3 gap-2 text-center">
+                    <div>
+                        <div class="text-xl font-black text-[#0b132b]">300M+</div>
+                        <div class="text-[10px] text-slate-500 font-medium">Paper records</div>
                     </div>
-                    <button onclick="executeSearch()" class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3.5 rounded-xl font-medium text-sm transition flex items-center gap-2">
-                        <span>Execute Search</span>
-                    </button>
+                    <div>
+                        <div class="text-xl font-black text-[#0b132b]">50M+</div>
+                        <div class="text-[10px] text-slate-500 font-medium">Full-text & files</div>
+                    </div>
+                    <div>
+                        <div class="text-xl font-black text-[#0b132b]">25</div>
+                        <div class="text-[10px] text-slate-500 font-medium">Research tools</div>
+                    </div>
                 </div>
 
-                <!-- Boolean Query Builder Helpers -->
-                <div class="flex items-center gap-2 text-xs text-slate-400">
-                    <span class="font-medium text-slate-500">Quick Operators:</span>
-                    <button onclick="appendOperator('AND')" class="bg-slate-800 hover:bg-slate-700 px-2.5 py-1 rounded border border-slate-700">AND</button>
-                    <button onclick="appendOperator('OR')" class="bg-slate-800 hover:bg-slate-700 px-2.5 py-1 rounded border border-slate-700">OR</button>
-                    <button onclick="appendOperator('NOT')" class="bg-slate-800 hover:bg-slate-700 px-2.5 py
+                <div class="bg-white/80 border border-amber-200/80 rounded-2xl p-4 space-y-2">
+                    <span class="text-xs font-bold text-slate-900 flex items-center gap-1">
+                        <i class="fa-solid fa-code"></i> For developers
+                    </span>
+                    <p class="text-[11px] text-slate-600">
+                        Use the same corpus in your own apps through the Metadata API, Files API and Research MCP.
+                    </p>
+                    <a href="#" class="text-xs font-bold text-amber-700 hover:underline inline-block pt-1">
+                        Developer docs &rarr;
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-auto border-t border-slate-200 bg-white py-8 text-center text-xs text-slate-500">
+        <p>&copy; 2026 Researched.ai. Multi-Source Grounded Academic Engine.</p>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        function setQuery(q) {
+            document.getElementById('main-query').value = q;
+            executePlaygroundSearch();
+        }
+
+        async function executePlaygroundSearch() {
+            const query = document.getElementById('main-query').value.trim();
+            const win = document.getElementById('results-window');
+
+            if (!query) {
+                alert('Please enter a query.');
+                return;
+            }
+
+            win.innerHTML = `
+                <div class="py-12 space-y-2">
+                    <i class="fa-solid fa-spinner fa-spin text-2xl text-teal-600"></i>
+                    <p class="text-xs font-bold text-slate-600">Querying indexed APIs (Semantic Scholar, Crossref)...</p>
+                </div>`;
+
+            let results = [];
+
+            try {
+                if (document.getElementById('src-semanticscholar').checked) {
+                    const res = await fetch(`https://api.semanticscholar.org/graph/v1/paper/search?query=${encodeURIComponent(query)}&limit=3&fields=title,authors,year,externalIds,abstract`);
+                    if (res.ok) {
+                        const data = await res.json();
+                        (data.data || []).forEach(p => {
+                            results.push({
+                                title: p.title,
+                                authors: (p.authors || []).map(a => a.name).join(', ') || 'Unknown Authors',
+                                year: p.year || 'N/A',
+                                source: 'Semantic Scholar',
+                                doi: p.externalIds ? p.externalIds.DOI : null,
+                                abstract: p.abstract || 'No abstract record available.'
+                            });
+                        });
+                    }
+                }
+
+                if (document.getElementById('src-crossref').checked) {
+                    const res = await fetch(`https://api.crossref.org/works?query=${encodeURIComponent(query)}&rows=3`);
+                    if (res.ok) {
+                        const data = await res.json();
+                        (data.message.items || []).forEach(item => {
+                            results.push({
+                                title: item.title ? item.title[0] : 'Untitled Record',
+                                authors: (item.author || []).map(a => `${a.given || ''} ${a.family || ''}`).join(', ') || 'Unknown Authors',
+                                year: item.created ? item.created['date-parts'][0][0] : 'N/A',
+                                source: 'Crossref',
+                                doi: item.DOI,
+                                abstract: 'Indexed record from Crossref REST endpoint.'
+                            });
+                        });
+                    }
+                }
+            } catch (e) {
+                console.error(e);
+            }
+
+            if (results.length === 0) {
+                win.innerHTML = `
+                    <div class="py-8 text-center text-slate-500">
+                        <p class="text-xs font-bold">No records returned for this query. Try toggling sources or keywords.</p>
+                    </div>`;
+                return;
+            }
+
+            win.innerHTML = `
+                <div class="text-left w-full space-y-3">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                        <span class="text-xs font-bold text-slate-700">${results.length} Papers Aggregated</span>
+                        <span class="text-[10px] bg-teal-100 text-teal-800 font-bold px-2 py-0.5 rounded">Live Grounded Feed</span>
+                    </div>
+                    <div class="space-y-3">
+                        ${results.map(r => `
+                            <div class="bg-white border border-slate-200 rounded-xl p-3.5 shadow-2xs space-y-2">
+                                <div class="flex items-start justify-between gap-2">
+                                    <h4 class="text-xs font-bold text-blue-900 leading-snug">${r.title}</h4>
+                                    <span class="text-[9px] bg-slate-100 text-slate-600 font-bold px-1.5 py-0.5 rounded shrink-0">${r.source}</span>
+                                </div>
+                                <p class="text-[11px] text-slate-500 line-clamp-2">${r.abstract}</p>
+                                <div class="flex items-center justify-between text-[10px] text-slate-500 pt-1 border-t border-slate-100">
+                                    <span>${r.authors} (${r.year})</span>
+                                    <button onclick="addCitation('${escapeStr(r.title)}', '${escapeStr(r.authors)}', '${r.year}', '${r.doi || ''}')" class="text-teal-700 hover:text-teal-900 font-bold flex items-center gap-1">
+                                        <i class="fa-solid fa-plus text-[9px]"></i> Add Citation
+                                    </button>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>`;
+        }
+
+        function escapeStr(s) {
+            return (s || '').replace(/'/g, "\\'");
+        }
+
+        function addCitation(t, a, y, d) {
+            const notes = document.getElementById('studio-notes');
+            notes.value += `\n• ${t} (${y}). ${a}.${d ? ' DOI:' + d : ''}`;
+        }
+
+        function clearStudio() {
+            document.getElementById('studio-notes').value = '';
+        }
+    </script>
+</body>
+</html>
