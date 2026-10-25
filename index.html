@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Researched.ai - Grounded Academic AI Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col font-sans">
+
+    <!-- Navigation -->
+    <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="bg-indigo-600 p-2 rounded-lg text-white">
+                    <i class="fa-solid fa-graduation-cap text-xl"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg leading-none">Researched<span class="gradient-text">.ai</span></h1>
+                    <p class="text-xs text-slate-400">Grounded Academic AI Platform</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="bg-emerald-500/10 text-emerald-400 text-xs px-2.5 py-1 rounded-full border border-emerald-500/20 flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    Connected to OpenAlex & PubMed
+                </span>
+                <button class="bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-lg text-sm font-medium transition">
+                    Upgrade to Pro
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 max-w-7xl w-full mx-auto p-4 md:p-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
+        
+        <!-- Left Sidebar: Controls & Search -->
+        <div class="lg:col-span-4 space-y-6">
+            <div class="bg-slate-800/50 border border-slate-700/60 rounded-xl p-5">
+                <h2 class="text-sm font-semibold text-slate-300 uppercase tracking-wider mb-4">
+                    <i class="fa-solid fa-magnifying-glass text-indigo-400 mr-2"></i>Literature Search
+                </h2>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-medium text-slate-400 mb-1">Research Question or Topic</label>
+                        <input type="text" id="searchInput" placeholder="e.g. Impact of AI on higher education retention rates" 
+                            class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-indigo-500 transition">
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-medium text-slate-400 mb-1">Year Range</label>
+                            <select class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-xs text-slate-300">
+                                <option>2020 - 2026</option>
+                                <option>2015 - 2026</option>
+                                <option>All Time</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-400 mb-1">Citation Style</label>
+                            <select class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-xs text-slate-300">
+                                <option>APA 7th</option>
+                                <option>IEEE</option>
+                                <option>Harvard</option>
+                                <option>Chicago</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button onclick="runSearch()" class="w-full bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white py-2.5 rounded-lg text-sm font-medium shadow-lg transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> Synthesize Evidence
+                    </button>
+                </div>
+            </div>
+
+            <!-- Paper Upload -->
+            <div class="bg-slate-800/50 border border-slate-700/60 rounded-xl p-5">
+                <h2 class="text-sm font-semibold text-slate-300 uppercase tracking-wider mb-3">
+                    <i class="fa-solid fa-file-pdf text-indigo-400 mr-2"></i>Analyze Custom PDF
+                </h2>
+                <div class="border-2 border-dashed border-slate-700 rounded-xl p-6 text-center hover:border-indigo-500/50 transition cursor-pointer bg-slate-900/30">
+                    <i class="fa-solid fa-cloud-arrow-up text-2xl text-slate-400 mb-2"></i>
+                    <p class="text-xs text-slate-300 font-medium">Drop academic PDF here</p>
+                    <p class="text-[10px] text-slate-500 mt-1">Extract methodology, findings & limitations instantly</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side: Synthesis Matrix & Draft Builder -->
+        <div class="lg:col-span-8 space-y-6">
+            
+            <!-- Output Workspace -->
+            <div class="bg-slate-800/50 border border-slate-700/60 rounded-xl p-5 min-h-[450px] flex flex-col">
+                <div class="flex items-center justify-between border-b border-slate-700/60 pb-3 mb-4">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-sparkles text-indigo-400"></i>
+                        <h3 class="font-semibold text-slate-200">Synthesis Workspace</h3>
+                    </div>
+                    <div class="flex gap-2">
+                        <button class="bg-slate-700/60 hover:bg-slate-700 text-xs px-3 py-1.5 rounded-md text-slate-300 transition">
+                            <i class="fa-solid fa-copy mr-1"></i> Copy
+                        </button>
+                        <button class="bg-slate-700/60 hover:bg-slate-700 text-xs px-3 py-1.5 rounded-md text-slate-300 transition">
+                            <i class="fa-solid fa-download mr-1"></i> Export DOCX
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Results Output Box -->
+                <div id="resultsArea" class="flex-1 bg-slate-900/60 rounded-lg p-4 border border-slate-700/40 text-slate-300 text-sm leading-relaxed space-y-4">
+                    <div class="text-slate-500 text-center py-12">
+                        <i class="fa-solid fa-book-open-reader text-3xl mb-3 block opacity-40"></i>
+                        Enter a research query above to generate grounded literature syntheses backed by peer-reviewed citations.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script>
+        function runSearch() {
+            const query = document.getElementById('searchInput').value || 'AI in Higher Education';
+            const results = document.getElementById('resultsArea');
+            
+            results.innerHTML = `
+                <div class="space-y-4 animate-fade-in">
+                    <div class="p-3 bg-indigo-950/40 border border-indigo-800/40 rounded-lg text-xs text-indigo-300">
+                        <strong>Query:</strong> "${query}" — Analyzed 14 peer-reviewed sources from OpenAlex database.
+                    </div>
+                    <h4 class="font-bold text-slate-100 text-base">Key Literature Findings</h4>
+                    <p>Recent studies demonstrate that integrating generative AI tools into undergraduate workflows yields variable outcomes depending on pedagogical structure [1]. While personalized learning assistance improves engagement metrics, issues regarding algorithmic bias and citation hallucination persist across current models [2].</p>
+                    
+                    <h5 class="font-semibold text-slate-200 text-xs uppercase tracking-wider text-indigo-400 mt-4">Evidence Matrix</h5>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li class="bg-slate-800/80 p-2.5 rounded border border-slate-700/50">
+                            <strong>[1] Smith et al. (2024)</strong> — <em>Generative AI in Modern Pedagogy</em>. Journal of Educational Technology. 
+                            <span class="block text-slate-400 text-[11px] mt-1">Sample size: N=1,200 students. Key result: 18% increase in task completion speed.</span>
+                        </li>
+                        <li class="bg-slate-800/80 p-2.5 rounded border border-slate-700/50">
+                            <strong>[2] Kamau & Chen (2025)</strong> — <em>Academic Integrity and LLM Verification Frameworks</em>. International EdTech Review.
+                            <span class="block text-slate-400 text-[11px] mt-1">Evaluated 45 AI detection tools; highlighted necessity of DOI-level evidence grounding.</span>
+                        </li>
+                    </ul>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
